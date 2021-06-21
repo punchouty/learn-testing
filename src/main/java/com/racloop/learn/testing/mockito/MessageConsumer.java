@@ -1,6 +1,5 @@
-package com.racloop.learn.testing.service;
+package com.racloop.learn.testing.mockito;
 
-import com.racloop.learn.testing.model.Event;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -12,6 +11,7 @@ public class MessageConsumer {
 
     public void onMessage(Event event) {
         logger.log("Before : " + event);
+//        event.setTemperature(event.getTemperature() + 1);
         boolean filtered = this.filter.filter(event);
         if(filtered) {
             messageProducer.send(event);

@@ -1,4 +1,4 @@
-package com.racloop.learn.testing.model;
+package com.racloop.learn.testing.mockito;
 
 import lombok.Data;
 
