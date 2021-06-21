@@ -9,4 +9,5 @@ public class Event {
 
     private Date timestamp;
     private float temperature;
+    private int monthOfYear;
 }
