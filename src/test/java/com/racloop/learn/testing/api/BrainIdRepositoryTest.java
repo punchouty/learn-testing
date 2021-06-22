@@ -31,7 +31,7 @@ class BrainIdRepositoryTest {
 
     @Test
     void findByKeyToken() {
-        List<BrainId> byKeyTokens = brainIdRepository.findByKeyToken("kt-1");
-        assertEquals(1, byKeyTokens.size());
+        List<BrainId> ids = brainIdRepository.findByDomain("common");
+        assertEquals(2, ids.size());
     }
 }
