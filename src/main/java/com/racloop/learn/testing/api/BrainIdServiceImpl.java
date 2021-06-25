@@ -15,16 +15,21 @@ public class BrainIdServiceImpl implements BrainIdService {
     }
 
     @Override
-    public BrainId save(BrainId brainId) {
-        if(brainId.getId() == null) {
-            throw new InvalidDataException("Id cannot be null");
-        }
-        return brainIdRepository.save(brainId);
+    public List<BrainId> all() {
+        return brainIdRepository.findAll();
     }
 
     @Override
     public List<BrainId> search(String domain) {
         return brainIdRepository.findByDomain(domain);
+    }
+
+    @Override
+    public BrainId save(BrainId brainId) {
+        if(brainId.getId() == null) {
+            throw new InvalidDataException("Id cannot be null");
+        }
+        return brainIdRepository.save(brainId);
     }
 
     @Override

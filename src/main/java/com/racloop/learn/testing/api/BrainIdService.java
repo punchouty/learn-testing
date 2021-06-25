@@ -11,4 +11,6 @@ public interface BrainIdService {
     BrainId edit(Long id, BrainId brainId);
 
     void delete(Long id);
+
+    List<BrainId> all();
 }

@@ -24,6 +24,12 @@ public class BrainIdController {
         return brainIdService.search(domain);
     }
 
+    @GetMapping({"/", ""})
+    public List<BrainId> all() {
+        log.info("all");
+        return brainIdService.all();
+    }
+
     @PostMapping({"/", ""})
     @ResponseStatus(HttpStatus.CREATED)
     public BrainId create(@Valid @RequestBody BrainId brainId) {
