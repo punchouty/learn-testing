@@ -18,16 +18,16 @@ public class BrainIdController {
         this.brainIdService = brainIdService;
     }
 
-    @GetMapping("/search")
-    public List<BrainId> search(@RequestParam(value = "domain", defaultValue = "common") String domain) {
-        log.info("search : " + domain);
-        return brainIdService.search(domain);
-    }
-
     @GetMapping({"/", ""})
     public List<BrainId> all() {
         log.info("all");
         return brainIdService.all();
+    }
+
+    @GetMapping({"/search", "/search/"})
+    public List<BrainId> search(@RequestParam(value = "domain", defaultValue = "common") String domain) {
+        log.info("search : " + domain);
+        return brainIdService.search(domain);
     }
 
     @PostMapping({"/", ""})

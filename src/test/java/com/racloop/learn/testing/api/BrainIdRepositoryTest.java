@@ -17,15 +17,11 @@ class BrainIdRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        BrainId brainId = new BrainId();
-        brainId.setDomain("common");
-        brainId.setId(1L);
-        brainId.setKeyToken("kt-1");
+        BrainId brainId = BrainId.builder().id(1L).domain("common").keyToken("key-token-1").build();
         brainIdRepository.save(brainId);
-        brainId = new BrainId();
-        brainId.setDomain("common");
-        brainId.setId(2L);
-        brainId.setKeyToken("kt-2");
+        brainId = BrainId.builder().id(2L).domain("common").keyToken("key-token-2").build();
+        brainIdRepository.save(brainId);
+        brainId = BrainId.builder().id(3L).domain("telecom").keyToken("key-token-3").build();
         brainIdRepository.save(brainId);
     }
 

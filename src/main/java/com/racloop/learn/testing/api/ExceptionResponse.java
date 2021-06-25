@@ -1,7 +1,10 @@
 package com.racloop.learn.testing.api;
 
+import lombok.Data;
+
 import java.util.Date;
 
+@Data
 public class ExceptionResponse {
 	private final Date timestamp;
 	private final String message;
@@ -12,18 +15,6 @@ public class ExceptionResponse {
 		this.timestamp = timestamp;
 		this.message = message;
 		this.details = details;
-	}
-
-	public Date getTimestamp() {
-		return timestamp;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public String getDetails() {
-		return details;
 	}
 
 }
