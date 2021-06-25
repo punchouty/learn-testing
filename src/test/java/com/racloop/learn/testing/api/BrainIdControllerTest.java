@@ -146,6 +146,7 @@ class BrainIdControllerTest {
         // then
         System.out.println(response);
         assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+        assertEquals("must not be blank", JsonPath.parse(response.getBody()).read("$.errors.domain"));
     }
 
     @Test
